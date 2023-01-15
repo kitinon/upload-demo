@@ -8,6 +8,7 @@ After successfully clone this repository,
 
 ```bash
 cd upload-demo
+npm i
 npm run dev -- --open
 ```
 
