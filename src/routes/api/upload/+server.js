@@ -1,4 +1,3 @@
-/** @type {import('./$types').RequestHandler} */
 import fs from 'fs'
 
 const twoDec = num => (Math.round(num * 100) / 100).toFixed(2)
@@ -11,6 +10,7 @@ const formatSize = size => size > GB
       ? `${twoDec(size/KB)}KB`
       : `${size} bytes`
 
+/** @type {import('./$types').RequestHandler} */
 export async function POST({ request, url }) {
   const { body } = request
   if (body == null) {
