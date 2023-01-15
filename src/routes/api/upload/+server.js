@@ -1,4 +1,4 @@
-import fs from 'fs'
+//import fs from 'fs'
 
 const twoDec = num => (Math.round(num * 100) / 100).toFixed(2)
 const KB = 1024, MB = 1024*KB, GB = 1024*MB
