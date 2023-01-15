@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte'
-  import axios from 'axios'
-
+  
   let file
   let report = ""
   
@@ -9,8 +8,12 @@
     try {
       file = this.files[0]
       report = "sending file..."
-      const res = await axios.post(`/api/upload?name=${file.name}`, file)
-      report = res.data
+      const res = await fetch(`/api/upload?name=${file.name}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/octet-stream' },
+        body: file
+      })
+      report = await res.text()
     } catch (ex) {
       console.error(ex)
     }
